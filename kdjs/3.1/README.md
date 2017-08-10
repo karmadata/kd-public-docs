@@ -6,6 +6,13 @@
 * CDN - [http://cdn.karmadata.com/js/3.1.7/kd.js](http://cdn.karmadata.com/js/3.1.7/kd.js)
 
 
+## Documents
+* [Quick Examples](#examples)
+* [Detailed Documents](api/README.md)
+* [Release Notes](releasenotes.md)
+* [Build CDN - internal use](build.md)
+
+
 ## Examples
 KarmaData provides a versatile API to access our database of healthcare data. Here are examples of how to use the kd.js library to access KD API, starting from the simplest.
 
