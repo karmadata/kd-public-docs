@@ -1,0 +1,22 @@
+## Release Notes
+### 3.0.0 Initial release of KD3
+### 3.0.1
+* Updated Date serialization to use moment().format("YYYY-MM-DD")
+### 3.0.2
+* Added support for Select API
+* Started the change of name from GroupBy to SelectItem
+### 3.1.0
+* Supporting KD 3.1 API
+### 3.1.3
+* Supporting npm
+### 3.1.4
+* Removed dependency on jQuery
+* Removed dependency on Underscore (uses Lodash internally)
+### 3.1.5
+* Reduce Lodash footprint
+* Added protection against invalid `JoinEntity`
+### 3.1.7
+* Deprecated `GroupBy` in favor of `SelectItem`
+
+## Building kd.js (for internal use)
+Please refer to [build](build.md) page.
