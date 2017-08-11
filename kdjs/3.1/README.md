@@ -3,7 +3,7 @@
 
 ## Usage
 * React - `npm install karmadata`
-* CDN - [http://cdn.karmadata.com/js/3.1.7/kd.js](http://cdn.karmadata.com/js/3.1.7/kd.js)
+* CDN - [Vist KarmaData CDN](https://github.com/karmadata/kd-public-docs/blob/master/kdjs/3.1/CDN.md)
 
 
 ## Documents
