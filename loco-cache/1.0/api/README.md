@@ -10,5 +10,5 @@
 * [`getStr(key, options)`](getStr.md) - retrieve a cache entry
 
 ## Manually clean cache
-* [sweep](sweep.md) - manually expires old cache entries
+* [`sweep(options)`](sweep.md) - manually expires old cache entries
 
