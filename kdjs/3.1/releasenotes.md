@@ -17,6 +17,13 @@
 * Added protection against invalid `JoinEntity`
 ### 3.1.7
 * Deprecated `GroupBy` in favor of `SelectItem`
+### 3.1.8
+* Improved documentation
+### 3.1.9
+* added getOperator and setOperator
+* allows xhr with credentials
+### 3.1.10
+* added caching
 
 ## Building kd.js (for internal use)
 Please refer to [build](build.md) page.
