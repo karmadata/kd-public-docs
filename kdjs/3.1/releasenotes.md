@@ -24,6 +24,9 @@
 * allows xhr with credentials
 ### 3.1.10
 * added caching
+### 3.1.11
+* using new caching mechanism
+
 
 ## Building kd.js (for internal use)
 Please refer to [build](build.md) page.
