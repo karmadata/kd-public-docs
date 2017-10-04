@@ -26,6 +26,12 @@
 * added caching
 ### 3.1.11
 * using new caching mechanism
+### 3.1.12
+* bug fix: now allows resetting a SelectItem sorting back to null
+### 3.1.15
+* added removeAllSelectItems()
+### 3.1.16
+* kd.js should now work on server side. When program starts, set `global.XMLHttpRequest = require('xhr2')`
 
 
 ## Building kd.js (for internal use)
