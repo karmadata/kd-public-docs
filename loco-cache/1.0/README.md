@@ -26,35 +26,37 @@ on session or domain level. `loco-cache` provides a robust abstraction on top of
 `loco-cache` API is intuitive yet customizable.
 
 Example 1: basic example using `.get()` and `.set()`
-  
-    var cache = require('loco-cache')()
-    
-    // assume we have to obtain a list of countries via AJAX to populate a dropdown
-    // before the AJAX call, check the cache first
-    var countries = cache.get('countries')
-    if (countries == null) {
-        // not in cache, maek the AJAX call instead, then store in cache
-        countries = await ajax('/api/countries').data
-        cache.set('countries', countries)
-    }
 
+```js
+var cache = require('loco-cache')()
+
+// assume we have to obtain a list of countries via AJAX to populate a dropdown
+// before the AJAX call, check the cache first
+var countries = cache.get('countries')
+if (countries == null) {
+    // not in cache, maek the AJAX call instead, then store in cache
+    countries = await ajax('/api/countries').data
+    cache.set('countries', countries)
+}
+```
 
 Example 2: customize with options
 
-    var cache = require('loco-cache')({
-        prefix: "acme",
-        expiresIn: 1200,     // each key expires in 1200 seconds
-        storage: 'local'  // use local storage
-    })
-    
-    // only customization is different. everything below stays the same
-    var countries = cache.get('countries')
-    if (countries == null) {
-        // not in cache, maek the AJAX call instead, then store in cache
-        countries = await ajax('/api/countries').data
-        cache.set('countries', countries)
-    }
+```js
+var cache = require('loco-cache')({
+    prefix: "acme",
+    expiresIn: 1200,     // each key expires in 1200 seconds
+    storage: 'local'  // use local storage
+})
 
+// only customization is different. everything below stays the same
+var countries = cache.get('countries')
+if (countries == null) {
+    // not in cache, maek the AJAX call instead, then store in cache
+    countries = await ajax('/api/countries').data
+    cache.set('countries', countries)
+}
+```
 
 ## Cheatsheet
 Simple cheatsheet to get you going. For detailed documentation please visit [Docs](https://github.com/karmadata/kd-public-docs/blob/master/loco-cache/1.0/README.md)
