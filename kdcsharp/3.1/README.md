@@ -20,13 +20,14 @@ var apikey = '-----';   // Please obtain API key by contacting KarmaData
 var client = KdClient.ApiClinet(apikey, 'https://api.karmadata.com');
 
 // create request and query API
-var query = KdQuery.Search(KdHealthcareEntity.KdPhysician);
-var result = client.Request2Objects(string>(query).Result;
+var query = KdQuery.Search(KdHealthcareEntity.KdPhysician)
+    .StartRow(1, 10);
+var result = client.Request2Objects<JObject>(query).Result;
 
 if (result.IsSuccessStatusCode)
 {
-  Console.WriteLine("total: {0}, returned: {1}", result.Count, result.Entities.Count);
-  foreach (var row in result.Entities) Console.Write(row);
+    Console.WriteLine("total: {0}, returned: {1}", result.Count, result.Entities.Count);
+    foreach (var row in result.Entities) Console.Write(row);
 }
 ```
 
