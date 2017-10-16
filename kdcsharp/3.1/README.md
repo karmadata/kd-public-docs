@@ -33,23 +33,26 @@ if (result.IsSuccessStatusCode)
 
 ### Example 2: retrieving physicians that are female sole proprietors (using filters)
 
-```js
-// create filters
-const filter1 = kd.FilterItem('KdPhysician', 'Gender', 'String', 'Eq', ['Female']);
-const filter2 = kd.FilterItem('KdPhysician', 'IsSoleProprietor', 'Boolean', 'Eq', [true]);
+```c#
+// initialize client
+var apikey = '-----';   // Please obtain API key by contacting KarmaData
+var client = KdClient.ApiClinet(apikey, 'https://api.karmadata.com');
 
-// create request and add those filters
-const request = kd.Request('Search', 'KdPhysician');
-request.setUrlBase('https://api.karmadata.com');
-request.setApiKey('-----'); // Please obtain API key by contacting KarmaData
-request.addFilterItem(filter1);
-request.addFilterItem(filter2);
+// create request and query API
+var query = KdQuery.Search(KdHealthcareEntity.KdPhysician)
+    .StartRow(1, 10)
+    .FilterGroup()
+    .And(KdHealthcareEntity.KdPhysician, "Gender", "String", KdRequestOperator.Eq, "Female")
+    .And(KdHealthcareEntity.KdPhysician, "IsSoleProprietor", "Boolean", KdRequestOperator.Eq, true);
+var result = client.Request2Objects<JObject>(query).Result;
 
-// request data and wait for output
-request.requestData();
-request.setAjaxDone((data) => {
-  console.log(data);
-});
+if (result.IsSuccessStatusCode)
+{
+    Console.WriteLine("total: {0}, returned: {1}", result.Count, result.Entities.Count);
+    foreach (var row in result.Entities) Console.Write(row);
+}
+return true;
+
 ```
 
 ### Example 3: retrieving physicians that are female and belong to physician groups of size 5-10 (using FilterGroup)
