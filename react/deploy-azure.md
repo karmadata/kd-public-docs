@@ -11,6 +11,7 @@ It is different than your Azure login. It's your username for deploying using FT
 ## Deployment
 * From the web app's overview page, find the FTP URL
 * copy ftp2azure.js to your React project
+* copy web.config to public folder (it sets up proper routing rules)
 * npm install ftp-deploy
 * set up .env
   * AZURE_FTP_HOST= the FTP URL you found earlier
