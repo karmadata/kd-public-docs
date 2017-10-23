@@ -1,8 +1,8 @@
 # KarmaData.Util.Client - .Net Client for accessing KD API
 
 ## Usage
-* NuGet V3 - https://www.myget.org/F/karmadata-util-client/api/v3/index.json
-* NuGet V2 - https://www.myget.org/F/karmadata-util-client/api/v2
+* NuGet V3 - [https://www.myget.org/F/karmadata-util-client/api/v3/index.json](https://www.myget.org/F/karmadata-util-client/api/v3/index.json)
+* NuGet V2 - [https://www.myget.org/F/karmadata-util-client/api/v2](https://www.myget.org/F/karmadata-util-client/api/v2)
 
 ## Documents
 * [Quick Examples](#examples)
@@ -14,7 +14,7 @@ KarmaData provides a versatile API to access our database of healthcare data. He
 
 ### Example 1: retrieving a random list of 10 physicians
 
-```c#
+```cs
 // initialize client
 var apikey = '-----';   // Please obtain API key by contacting KarmaData
 var client = KdClient.ApiClinet(apikey, 'https://api.karmadata.com');
@@ -33,7 +33,7 @@ if (result.IsSuccessStatusCode)
 
 ### Example 2: retrieving physicians that are female sole proprietors (using filters)
 
-```c#
+```cs
 // initialize client
 var apikey = '-----';   // Please obtain API key by contacting KarmaData
 var client = KdClient.ApiClinet(apikey, 'https://api.karmadata.com');
@@ -57,7 +57,7 @@ return true;
 
 ### Example 3: retrieving physicians that are female and belong to physician groups of size 5-10 (using FilterGroup)
 
-```c#
+```cs
 // initialize client
 var apikey = '-----';   // Please obtain API key by contacting KarmaData
 var client = KdClient.ApiClinet(apikey, 'https://api.karmadata.com');
@@ -83,7 +83,7 @@ return true;
 
 ### Example 4: retrieve physicians that are sole proprietors and sort by graduation year
 
-```c#
+```cs
 // initialize client
 var apikey = '-----';   // Please obtain API key by contacting KarmaData
 var client = KdClient.ApiClinet(apikey, 'https://api.karmadata.com');
