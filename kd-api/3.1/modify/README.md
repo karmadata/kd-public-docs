@@ -4,5 +4,5 @@ Used to make changes to the database.
 
 ## API List
 
-* /Modify
+* [`Modify` request](modify.md)
 
