@@ -11,6 +11,7 @@ Used to query for data retrieval from database.
 ## Concepts
 
 * General request format (common to all retrieval APIs)
+* Terms: Entity, Property, Datatype, etc.
 * Filtering
 * Geo and Text Search
 * Sorting
