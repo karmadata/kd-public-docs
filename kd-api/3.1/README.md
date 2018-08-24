@@ -14,4 +14,7 @@ The retrieve APIs are designed to allow flexible querying constructs, so by natu
 
 KD API is a JSON REST API, so tools like Postman would be a good way to test it. This documentation will show examples of GET/POST requests that access the API.
 
-## Detailed Documentations
+## Documents
+
+* Retrieve APIs (coming soon)
+* Modify APIs
