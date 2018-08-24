@@ -17,4 +17,4 @@ KD API is a JSON REST API, so tools like Postman would be a good way to test it.
 ## Documents
 
 * Retrieve APIs (coming soon)
-* Modify APIs
+* [Modify APIs](modify/README.md)
