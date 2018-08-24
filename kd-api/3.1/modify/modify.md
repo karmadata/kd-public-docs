@@ -81,3 +81,8 @@ POST body
   }
 ]
 ```
+
+## Advanced Topics
+* [Batching multiple modify queries](modify-multiple.md)
+* Primary Keys
+* Merge operation
