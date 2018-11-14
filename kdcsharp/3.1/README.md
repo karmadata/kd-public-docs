@@ -103,3 +103,39 @@ if (result.IsSuccessStatusCode)
 }
 return true;
 ```
+
+### KdModify Example: Inserting 2 physicians at the same time
+
+```cs
+var physician1 = new KdModify();
+physician1.Entity = "KdPhysician";
+physician1.Operation = "Insert";
+physician1.Values = new Dictionary<string, object>();
+physician1.Values["NPI"] = "123456789";
+physician1.Values["Gender"] = "Male";
+physician1.Values["IsPrimaryCare"] = true;
+
+var physician2 = new KdModify();
+physician2.Entity = "KdPhysician";
+physician2.Operation = "Insert";
+physician2.Values = new Dictionary<string, object>();
+physician2.Values["NPI"] = "987654321";
+physician1.Values["Gender"] = "Female";
+physician1.Values["IsPrimaryCare"] = true;
+
+var modifies = new List<KdModify>();
+modifies.Add(physician1);
+modifies.Add(physician2);
+
+// perform request
+var apikey = '-----';   // Please obtain API key by contacting KarmaData
+KdClient client = KdClient.ApiClient("...apikey...", "https://api.karmadata.com/");
+
+var modifyResult = await client.Request(modifies);
+
+// check result
+if (!modifyResult.IsSuccessStatusCode) throw new InvalidOperationException(Encoding.UTF8.GetString(await modifyResult.Content.ReadAsByteArrayAsync()));
+var jsonString = Encoding.UTF8.GetString(await modifyResult.Content.ReadAsByteArrayAsync());
+var modifyresponse = JsonConvert.DeserializeObject<JObject>(jsonString);
+if (((bool?)modifyresponse["success"]) != true) throw new InvalidOperationException((string)modifyresponse["error"]);
+```
