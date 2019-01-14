@@ -8,7 +8,7 @@ Modify request is a POST request. It accepts an array of queries. Each query can
 
 ## POST format
 
-```
+```js
 POST body = [Query, Query, Query ...]
 
 Query = {
@@ -30,7 +30,7 @@ Add a new employee into database
 URL: `https://<API address>/modify?apikey=.....`
 
 POST body
-```
+```js
 [
   {
     "Operation": "Insert",
@@ -51,7 +51,7 @@ Update Newton's publication count
 URL: `https://<API address>/modify?apikey=.....`
 
 POST body
-```
+```js
 [
   {
     "Operation": "Update",
@@ -70,7 +70,7 @@ Remove a record by ID
 URL: `https://<API address>/modify?apikey=.....`
 
 POST body
-```
+```js
 [
   {
     "Operation": "Delete",
