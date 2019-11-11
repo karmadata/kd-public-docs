@@ -54,7 +54,7 @@ let query = kd.Query('Select')
   .setApiKey('-----') // Please obtain API key by contacting KarmaData
   .rows(1, 100)
   .setMaxCacheAge(60)      // retrieve from cache if not older than 60 seconds
-  .setContext('select-physician-and-group`)  // add comment to this request
+  .setContext('select-physician-and-group')  // add comment to this request
   .select([
       kd.SelectItem('Select', 'KdPhysicianGroup', 'KdLabel', 'String'),
       kd.SelectItem('Select', 'KdPhysician', 'Name.Text', 'String'),
